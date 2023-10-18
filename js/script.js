@@ -33,12 +33,15 @@ const teamMembers = [
   }
 ];
 
-// stampare su console le informazioni dagli oggetti #MILESTONE 1
+// stampare su console le informazioni dagli oggetti in console #MILESTONE 1
+// stampare le informazioni dagli oggetti nel DOM #BONUS 1 & 2
 for (let i = 0; i < teamMembers.length; i++) {
   const currentMember = teamMembers[i];
-  const memberPortrait = `${currentMember.portrait}`;
-  const memberFullName = `${currentMember.fullName}`;
-  const memberRole = `${currentMember.role}`;
+  const memberPortrait = currentMember.portrait;
+  const memberFullName = currentMember.fullName;
+  const memberRole = currentMember.role;
+  //stampo le informazioni in console
+  console.log(memberPortrait, memberFullName, memberRole);
   // stampare le informazioni nel DOM
   templateCardEl(memberPortrait, memberFullName, memberRole);
 }
