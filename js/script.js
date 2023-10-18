@@ -33,11 +33,26 @@ const teamMembers = [
   }
 ];
 
-console.log(teamMembers);
-
 // stampare su console le informazioni dagli oggetti #MILESTONE 1
 for (let i = 0; i < teamMembers.length; i++) {
   const currentMember = teamMembers[i];
-  const memberInfos = `${currentMember.fullName}, ${currentMember.role}, ${currentMember.portrait}`;
-  console.log(memberInfos);
+  const memberPortrait = `${currentMember.portrait}`;
+  const memberFullName = `${currentMember.fullName}`;
+  const memberRole = `${currentMember.role}`;
+  // stampare le informazioni nel DOM
+  templateCardEl(memberPortrait, memberFullName, memberRole);
+}
+
+function templateCardEl (img, name, role) {
+  const cardTemplateHTML = document.querySelector('.templateCard').cloneNode(true);
+  const cardImg = cardTemplateHTML.querySelector('.card-img');
+  const cardDesc = cardTemplateHTML.querySelector('.card-desc');
+  cardImg.innerHTML = `
+    <img src="./img/${img}">
+  `;
+  cardDesc.innerHTML = `
+    <p class="member-name">${name}</p>
+    <p class="member-role">${role}</p>  
+  `;
+  document.querySelector('.grid').appendChild(cardTemplateHTML);
 }
