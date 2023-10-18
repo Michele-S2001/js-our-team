@@ -48,14 +48,11 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 function templateCardEl (img, name, role) {
   const cardTemplateHTML = document.querySelector('.templateCard').cloneNode(true);
-  const cardImg = cardTemplateHTML.querySelector('.card-img');
-  const cardDesc = cardTemplateHTML.querySelector('.card-desc');
-  cardImg.innerHTML = `
-    <img src="./img/${img}">
-  `;
-  cardDesc.innerHTML = `
-    <p class="member-name">${name}</p>
-    <p class="member-role">${role}</p>  
-  `;
+  const cardPortrait = cardTemplateHTML.querySelector('.card-portrait');
+  const cardMemberName = cardTemplateHTML.querySelector('.member-name');
+  const cardMemberRole = cardTemplateHTML.querySelector('.member-role');
+  cardPortrait.setAttribute('src', `./img/${img}`);
+  cardMemberName.innerHTML = name;
+  cardMemberRole.innerHTML = role;
   document.querySelector('.grid').appendChild(cardTemplateHTML);
 }
