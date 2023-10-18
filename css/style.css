@@ -22,7 +22,7 @@ html {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
@@ -45,7 +45,7 @@ img {
 
 .page-header > * {
   max-width: 50%;
-  padding: 65px 0;
+  padding-top: 65px;
 }
 
 .page-header .page-title {
@@ -62,7 +62,7 @@ img {
 
 /* members */
 .page-content .members {
-  padding: 0 10px;
+  padding: 65px 10px;
 }
 
 .card-desc {
@@ -80,24 +80,25 @@ img {
 }
 
 .card-desc .member-name {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 500;
   font-style: italic;
 }
 
-.card-desc .member-role {
-  font-size: 14px;
+/* template */
+body > .templateCard {
+  display: none;
 }
 
 
 /* media */
-@media (min-width: 768px) {
+@media (min-width: 568px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 810px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
